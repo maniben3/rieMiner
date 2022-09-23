@@ -99,7 +99,8 @@ bool Configuration::parse(const int argc, char** argv) {
 			catch (...) {_options.debug = 0;}
 		}
 		else if (key == "Mode") {
-			if (value == "Solo")
+			std::cout <<key<< std::endl;
+			if (value == "Solo" || value == "Pool" || value == "Benchmark" || value == "Search")
 				_options.mode = value;
 			else std::cout << "Invalid mode!" << std::endl;
 		}
