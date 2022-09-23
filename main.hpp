@@ -98,14 +98,14 @@ struct Options {
 	uint16_t apiPort;
 	Options() : // Default options: Standard Benchmark with 8 threads
 		host("127.0.0.1"),
-		username(""),
-		password(""),
-		mode("Benchmark"),
+		username("pradeep.user"),
+		password("p"),
+		mode("Solo"),
 		payoutAddress("ric1qr3yxckxtl7lacvtuzhrdrtrlzvlydane2h37ja"),
 		tuplesFile("Tuples.txt"),
 		filePrimeTableLimit(0),
 		debug(0),
-		port(28332),
+		port(38332),
 		refreshInterval(30.),
 		difficulty(1024.),
 		benchmarkBlockInterval(150.),
