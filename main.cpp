@@ -102,6 +102,7 @@ bool Configuration::parse(const int argc, char** argv) {
 			std::cout <<key<< std::endl;
 			if (value == "Solo" || value == "Pool" || value == "Benchmark" || value == "Search")
 				_options.mode = value;
+			        std::cout <<value<< std::endl;
 			else std::cout << "Invalid mode!" << std::endl;
 		}
 		else if (key == "Host") _options.host = value;
