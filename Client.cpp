@@ -36,6 +36,7 @@ mpz_class BlockHeader::target(const int32_t powVersion) const {
 		target += hashGmp;
 		trailingZeros = difficultyIntegerPart - 264U;
 		target <<= trailingZeros;
+		std::cout <<target<< std::endl;
 	}
 	else
 		ERRORMSG("Unexpected PoW Version " << powVersion);
