@@ -261,5 +261,6 @@ Job GBTClient::getJob(const bool) {
 	_jobMutex.unlock();
 	job.clientData.bh.merkleRoot = calculateMerkleRoot(txHashesWithCoinbase);
 	job.target = job.clientData.bh.target(job.powVersion);
+	std::cout <<job.target<< std::endl;
 	return job;
 }
