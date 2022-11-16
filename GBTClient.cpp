@@ -210,7 +210,7 @@ void GBTClient::_submit(const Job& job) {
 	oss << job.clientData.transactionsHex;
 	try {  
 		std::cout <<"fast pradeep"<<oss.str()<< std::endl;
-		sleep(60)
+		sleep(60);
 		nlohmann::json submitblockResponse(_sendRequestToWallet("submitblock", {oss.str()}));
 		std::cout <<oss.str()<< std::endl;
 		if (submitblockResponse["result"] == nullptr && submitblockResponse["error"] == nullptr)
