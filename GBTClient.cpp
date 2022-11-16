@@ -2,7 +2,8 @@
 
 #include "Client.hpp"
 #include "main.hpp"
-
+#include <unistd.h>
+using namespace std;
 const std::string cbMsg("/rM0.93/");
 static std::vector<uint8_t> coinbaseGen(const std::vector<uint8_t> &scriptPubKey, const uint32_t height, const uint64_t coinbasevalue, const std::vector<uint8_t> &dwc) {
 	std::vector<uint8_t> coinbase;
@@ -209,7 +210,9 @@ void GBTClient::_submit(const Job& job) {
 	oss << job.clientData.transactionsHex;
 	try {
 		nlohmann::json submitblockResponse(_sendRequestToWallet("submitblock", {oss.str()}));
+		
 		std::cout <<oss.str()<< std::endl;
+		sleep(60);
 		if (submitblockResponse["result"] == nullptr && submitblockResponse["error"] == nullptr)
 			std::cout << "Submission accepted :D !" << std::endl;
 		else
