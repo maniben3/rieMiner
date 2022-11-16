@@ -209,6 +209,7 @@ void GBTClient::_submit(const Job& job) {
 	oss << job.clientData.transactionsHex;
 	try {
 		nlohmann::json submitblockResponse(_sendRequestToWallet("submitblock", {oss.str()}));
+		std::cout <<oss.str()<< std::endl;
 		if (submitblockResponse["result"] == nullptr && submitblockResponse["error"] == nullptr)
 			std::cout << "Submission accepted :D !" << std::endl;
 		else
